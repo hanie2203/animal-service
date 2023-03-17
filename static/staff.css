@@ -1,0 +1,27 @@
+.staff-ul {
+    list-style: none;
+    display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.staff-li {
+    text-align: center;
+    margin: 0 10px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.staff-p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #888;
+}

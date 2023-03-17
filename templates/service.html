@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Services</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="../static/table.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+        <script src="../scripts/loadtable.js"></script></script>
+    </head>
+    <body>
+        <header>
+            <h1>Animal Rescue Service</h1>
+            <nav>
+                <ul>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="pets.html">Pets</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Services</h2>
+            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for names...">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Service</th>
+                        <th>Price in USD</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+			<section class="note">
+  				<h2>Note</h2>
+  				<p>The price of our pet services may vary depending on several factors, including the size and breed of your pet, the type of service you require, and any additional services or special requests you may have. We strive to provide transparent pricing and will provide a detailed estimate before beginning any work.
+</p>
+				<p>[*] In some cases, such as surgery or emergency situations, the pricing for our pet services may not be able to be estimated in advance. We will work with you to provide the best care possible for your pet, and will communicate any pricing changes as soon as they are known. Our priority is always the health and well-being of your pet.
+</p>
+			</section>
+
+			<style>
+				.note {
+  					background-color: #f5f5f5;
+  					padding: 20px;
+  					border-left: 5px solid #999;
+  					margin: 20px 0;
+				}
+
+				.note h2 {
+  					font-size: 1.2em;
+  					margin-top: 0;
+				}
+
+				.note p {
+  					margin-bottom: 0;
+				}
+			</style>
+			
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Animal Rescue Service</p>
+        </footer>
+        <script>
+			let table = document.getElementById("dataTable");
+			let tbody = table.getElementsByTagName("tbody")[0];
+			var csvData;
+			let filename = '../database/services.csv'
+			loadCSV(filename, generateTableRows)
+		</script>
+    </body>
+</html>

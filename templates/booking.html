@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Animal Rescue Service</title>
+	    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    </head>
+    <body>
+	    <header>
+		    <h1>Animal Rescue Service</h1>
+		    <nav>
+			    <ul>
+				    <li><a href="home.html">Home</a></li>
+					<li><a href="service-home.html">Services</a></li>
+					<li><a href="booking.html">Book a Pet Visit</a></li>
+					<li><a href="login.html">Login</a></li>
+			    </ul>
+		    </nav>
+	    </header>
+	    <main>
+		    <h2 style="text-align: center;">Book a Pet Visit</h2>
+		    <div class="booking-form">
+				<form id="my-form">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" required>
+
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required>
+
+					<label for="phone">Phone:</label>
+					<input type="phone" id="phone" name="phone" required>
+
+					<label for="address">Address:</label>
+					<input type="address" id="address" name="address" required>
+
+					<label for="pet_name">Pet Name:</label>
+					<input type="text" id="pet_name" name="pet_name" required>
+				
+				  	<label for="pet-type">Select your pet:</label>
+				  	<select id="pet-type" name="pet-type">
+						<option value="dog">Dog</option>
+						<option value="cat">Cat</option>
+						<option value="rabbit">Rabbit</option>
+						<option value="hamster">Hamster</option>
+						<option value="type-others">Others</option>
+				  	</select>
+				  	<label for="service-type">Select a service:</label>
+				  	<select id="service-type" name="service-type">
+						<option value="general-checkup">General Checkup</option>
+						<option value="vaccinations">Vaccinations</option>
+						<option value="spaying-neutering">Spaying/Neutering</option>
+						<option value="dental-care">Dental Care</option>
+						<option value="injury-treatment">Injury Treatment</option>
+						<option value="surgery">Surgery</option>
+						<option value="emergency-care">Emergency Care</option>
+				  	</select>
+				  	<label for="date">Select a date:</label>
+				  	<input type="date" id="date" name="date">
+
+				  	<label for="time">Select a time:</label>
+				  	<input type="time" id="time" name="time">
+
+					<label for="message">Message:</label>
+					<textarea id="message" name="message"></textarea>
+
+					<button type="submit">Submit</button>
+				</form>
+			</div>
+	    </main>
+	    <footer>
+		    <p>&copy; 2023 Animal Rescue Service</p>
+	    </footer>
+		<script src="../script.js"></script>
+    </body>
+</html>

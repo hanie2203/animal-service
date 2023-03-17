@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Appointments</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="../static/table.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+        <script src="../scripts/loadtable.js"></script></script>
+    </head>
+    <body>
+        <header>
+            <h1>Animal Rescue Service</h1>
+            <nav>
+                <ul>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="pets.html">Pets</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Appointments</h2>
+            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for names...">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer Name</th>
+                        <th>Pet Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Animal Rescue Service</p>
+        </footer>
+        <script>
+			let table = document.getElementById("dataTable");
+			let tbody = table.getElementsByTagName("tbody")[0];
+			var csvData;
+			let filename = '../database/appointments.csv'
+			loadCSV(filename, generateTableRows)
+		</script>
+    </body>
+</html>
